@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://yak8ds315rv0"]
+
+[ext_resource type="Script" path="res://options_menu2.gd" id="1_cqxbm"]
+[ext_resource type="FontFile" uid="uid://bsthdgvivtidj" path="res://assets/fonts/Minecraft.ttf" id="2_h231o"]
+[ext_resource type="PackedScene" uid="uid://budtciov30osb" path="res://options menu/settings_tab_container.tscn" id="2_lf2d0"]
+
+[node name="Options_Menu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cqxbm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_h231o")
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings_Tab_Container" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_lf2d0")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Exit_button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_h231o")
+text = "EXIT"

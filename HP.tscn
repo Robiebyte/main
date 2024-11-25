@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://j3iprgmgqthb"]
+
+[ext_resource type="Script" path="res://HP.gd" id="1_54ceg"]
+[ext_resource type="Texture2D" uid="uid://mf7tvx0ugee8" path="res://Hp/Full HP.png" id="1_ffemk"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-4, -2)
+script = ExtResource("1_54ceg")
+
+[node name="Heart_5" type="Sprite2D" parent="."]
+position = Vector2(14, 24)
+scale = Vector2(0.0357031, 0.0357031)
+texture = ExtResource("1_ffemk")
+
+[node name="Heart_4" type="Sprite2D" parent="."]
+position = Vector2(18, 24)
+scale = Vector2(0.0357031, 0.0357031)
+texture = ExtResource("1_ffemk")
+
+[node name="Heart_3" type="Sprite2D" parent="."]
+position = Vector2(22, 24)
+scale = Vector2(0.0358276, 0.0358276)
+texture = ExtResource("1_ffemk")
+
+[node name="Heart_2" type="Sprite2D" parent="."]
+position = Vector2(26, 24)
+scale = Vector2(0.0357031, 0.0357031)
+texture = ExtResource("1_ffemk")
+
+[node name="Heart_1" type="Sprite2D" parent="."]
+position = Vector2(30, 24)
+scale = Vector2(0.0357031, 0.0357031)
+texture = ExtResource("1_ffemk")

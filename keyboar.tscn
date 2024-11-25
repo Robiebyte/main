@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm0882y637faj"]
+
+[ext_resource type="Script" path="res://addons/onscreenkeyboard/onscreen_keyboard.gd" id="2_gnwq7"]
+
+[node name="Node2D" type="CanvasLayer"]
+
+[node name="OnscreenKeyboard" type="PanelContainer" parent="."]
+offset_left = 436.0
+offset_top = 400.0
+offset_right = 660.0
+offset_bottom = 544.0
+script = ExtResource("2_gnwq7")
+custom_layout_file = "<null>"

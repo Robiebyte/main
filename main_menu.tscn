@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqrghuawsoiy5"]
+
+[ext_resource type="Texture2D" uid="uid://cv8qpu5nuu2x3" path="res://assets/gold.png" id="1_b6yan"]
+[ext_resource type="Script" path="res://main_menu2.gd" id="1_siars"]
+[ext_resource type="AudioStream" uid="uid://b4iose302fyku" path="res://musics/popcorn-and-videogames-233568 (1).mp3" id="2_c8p7m"]
+[ext_resource type="PackedScene" uid="uid://yak8ds315rv0" path="res://options_menu2.tscn" id="3_7by5b"]
+[ext_resource type="AudioStream" uid="uid://d20331r3aw1ib" path="res://musics/8-bit-game-1-186975.mp3" id="3_a3eg0"]
+[ext_resource type="FontFile" uid="uid://bsthdgvivtidj" path="res://assets/fonts/Minecraft.ttf" id="5_a04ie"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_siars")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_c8p7m")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_a3eg0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b6yan")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("5_a04ie")
+theme_override_font_sizes/font_size = 64
+text = "REED THE DREAMER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_a04ie")
+theme_override_font_sizes/font_size = 24
+text = "START"
+
+[node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_a04ie")
+theme_override_font_sizes/font_size = 24
+text = "OPTIONS"
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_a04ie")
+theme_override_font_sizes/font_size = 24
+text = "EXIT"
+
+[node name="Options_Menu" parent="." instance=ExtResource("3_7by5b")]
+layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c8p7m")
+volume_db = -14.512
+autoplay = true
+bus = &"Music"
